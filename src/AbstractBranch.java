@@ -2,12 +2,6 @@ import java.util.*;
 
 public class AbstractBranch implements Branch {
 	
-//	String branchName;
-//	
-//	public AbstractBranch(String branchName){
-//		this.branchName = branchName;
-//	}
-
 	ArrayList<Branch> attachedBranches = new ArrayList<>();
 	
 	public void grow(Branch branch){
