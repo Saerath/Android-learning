@@ -2,11 +2,14 @@
 public class Main {
 
 	public static void main(String [ ] args){
-		Branch motherBirchBranch = new BirchBranch(); //Mother branch
-		motherBirchBranch.grow(); //Attach to mother branch
-		motherBirchBranch.doubleGrow(); //Double attach to mother branch
+		Branch firstBirchBranch = new BirchBranch();
+		Branch oakBranch = new OakBranch();
+		Branch birchBranch = new BirchBranch();
 		
-		motherBirchBranch.showAttached();
+		firstBirchBranch.doubleGrow(oakBranch); //Attach two oakBranch to fristBirchBranch
+		firstBirchBranch.grow(birchBranch); //Attach one birchBranch to firstBirchBranch
+		
+		firstBirchBranch.showAttached();
 	}
 
 }
