@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class AbstractBranch implements Branch {
+
 	
 	ArrayList<Branch> attachedBranches = new ArrayList<>();
 	
@@ -9,15 +10,19 @@ public class AbstractBranch implements Branch {
 	}
 	
 	public void doubleGrow(Branch branch){
-		grow(branch);
-		grow(branch);
+		attachedBranches.add(branch);
+		attachedBranches.add(branch);
+	}
+	
+	public ArrayList<Branch> getBranches(){ //Дочерние ветки
+		return this.attachedBranches;
 	}
 	
 	public void showAttached(){
-		for(Branch a : attachedBranches){
+		for(Branch a : getBranches()){
 			System.out.println(a);
+			a.showAttached();
 		}
 	}
-
 
 }
