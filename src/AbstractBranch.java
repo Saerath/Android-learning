@@ -11,11 +11,6 @@ public abstract class AbstractBranch implements Branch {
 	
 	public abstract void grow();
 	
-	public void doubleGrow(Branch branch){
-		attachedBranches.add(branch);
-		attachedBranches.add(branch);
-	}
-	
 	public ArrayList<Branch> getBranches(){ //Дочерние ветки
 		return this.attachedBranches;
 	}
