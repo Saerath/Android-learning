@@ -1,6 +1,7 @@
 
 public interface Branch{
-	void grow(Branch branch);
+	void attach(Branch branch);
+	abstract void grow();
 	void doubleGrow(Branch branch);
 	void showAttached();
 }

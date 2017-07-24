@@ -1,13 +1,15 @@
 import java.util.*;
 
-public class AbstractBranch implements Branch {
+public abstract class AbstractBranch implements Branch {
 
 	
 	ArrayList<Branch> attachedBranches = new ArrayList<>();
 	
-	public void grow(Branch branch){
+	public void attach(Branch branch){
 		attachedBranches.add(branch);
 	}
+	
+	public abstract void grow();
 	
 	public void doubleGrow(Branch branch){
 		attachedBranches.add(branch);

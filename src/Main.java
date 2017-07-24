@@ -6,9 +6,9 @@ public class Main {
 		
 		Branch second = new BirchBranch();
 		
-		firstBirchBranch.grow(second);
+		firstBirchBranch.grow();
 		
-		second.grow(new OakBranch());
+		second.grow();
 		
 		firstBirchBranch.showAttached();
 		System.out.println();
