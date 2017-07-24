@@ -1,7 +1,20 @@
 import java.util.*;
 
 public abstract class AbstractBranch implements Branch {
+	
+	String branchGen;
+	static Integer gen = 1;
+	
+	public void setBranchGen(String gen){
+		this.branchGen = gen;
+	}
+	
+	public String getBranchGen(){ return this.branchGen;}
 
+	public AbstractBranch() {
+		setBranchGen(gen.toString());
+		gen++;
+	}
 	
 	ArrayList<Branch> attachedBranches = new ArrayList<>();
 	
@@ -16,10 +29,13 @@ public abstract class AbstractBranch implements Branch {
 	}
 	
 	public void showAttached(){
-		for(Branch a : getBranches()){
-			System.out.println(a);
+		for(Branch a : attachedBranches){
+			System.out.println(a + ": " + getBranchGen() + " gen");
 			a.showAttached();
+
 		}
 	}
+	
+	
 
 }

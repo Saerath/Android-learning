@@ -2,18 +2,18 @@
 public class Main {
 
 	public static void main(String [ ] args){
+		Branch firstOakBranch = new OakBranch();
 		Branch firstBirchBranch = new BirchBranch();
 		
-		Branch second = new BirchBranch();
+		firstOakBranch.attach(firstBirchBranch);
+		firstOakBranch.grow();
+		firstOakBranch.grow();
 		
 		firstBirchBranch.grow();
-		
-		second.grow();
-		
-		firstBirchBranch.showAttached();
-		System.out.println();
-		second.showAttached();
+		firstBirchBranch.grow();
 
+		firstOakBranch.showAttached();
 	}
+
 
 }
