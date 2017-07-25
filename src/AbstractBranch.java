@@ -32,7 +32,6 @@ public abstract class AbstractBranch implements Branch {
 		for(Branch a : attachedBranches){
 			System.out.print(prefix);
 			System.out.println(a + ": " + getBranchGen() + " gen");
-//			prefix = prefix + "--";
 			a.showAttached(prefix + "--");
 
 		}

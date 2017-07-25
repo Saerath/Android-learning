@@ -5,15 +5,17 @@ public class Main {
 		Branch oakCore = new OakBranch();
 		Branch firstBirchBranch = new BirchBranch();
 		Branch secondBirchBranch = new BirchBranch();
+		Branch thirdOakBranch = new OakBranch();
 		
 		oakCore.attach(firstBirchBranch);
 		oakCore.grow();
 		oakCore.grow();
 
 		firstBirchBranch.attach(secondBirchBranch);
-		secondBirchBranch.grow();
+		secondBirchBranch.attach(thirdOakBranch);
+		thirdOakBranch.grow();
 
-		oakCore.showAttached(" " + "--");
+		oakCore.showAttached("");
 	}
 
 
