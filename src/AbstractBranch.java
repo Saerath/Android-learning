@@ -28,10 +28,11 @@ public abstract class AbstractBranch implements Branch {
 		return this.attachedBranches;
 	}
 	
-	public void showAttached(){
+	public void showAttached(String prefix){
 		for(Branch a : attachedBranches){
-			System.out.println(a + ": " + getBranchGen() + " gen");
-			a.showAttached();
+			System.out.println(prefix + " " + a + ": " + getBranchGen() + " gen");
+			prefix = prefix + "--";
+			a.showAttached(prefix);
 
 		}
 	}

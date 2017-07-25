@@ -2,5 +2,5 @@
 public interface Branch{
 	void attach(Branch branch);
 	void grow();
-	void showAttached();
+	void showAttached(String prefix);
 }
