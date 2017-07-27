@@ -5,6 +5,8 @@ import java.util.*;
 
 public abstract class AbstractBranch implements Branch {
 	
+	String branchPrefix;
+	
 	String branchGen;
 	static Integer gen = 1;
 	
@@ -12,7 +14,9 @@ public abstract class AbstractBranch implements Branch {
 		this.branchGen = gen;
 	}
 	
-	public String getBranchGen(){ return this.branchGen;}
+	public String getBranchGen(){ 
+		return this.branchGen;
+	}
 
 	public AbstractBranch() {
 		setBranchGen(gen.toString());
@@ -27,17 +31,19 @@ public abstract class AbstractBranch implements Branch {
 	
 	public abstract void grow();
 	
+	public abstract String getBranchPrefix();
+	
 	public ArrayList<Branch> getBranches(){ //Дочерние ветки
 		return this.attachedBranches;
 	}
 	
 	public void showAttached(String prefix){
-		if (prefix.equals("--")){
+		if (prefix.equals(this.getBranchPrefix())){
 			System.out.println("Root branch: " + this + "\n");
 		}
 			for(Branch a : attachedBranches){
 				System.out.println("	" + prefix + " " + a + ": " + getBranchGen() + " gen");
-				a.showAttached(prefix + "--");
+				a.showAttached(prefix + this.getBranchPrefix());
 			}
 		
 	}
@@ -57,18 +63,21 @@ public abstract class AbstractBranch implements Branch {
 			switch(command.toUpperCase()){
 			case "GROW":
 				this.grow();
-				this.showAttached("--");
+				this.showAttached(getBranchPrefix());
+				System.out.println();
 				break;
 			case "ATTACH OAK":
 				this.attach(new OakBranch());
-				this.showAttached("--");
+				this.showAttached(getBranchPrefix());
+				System.out.println();
 				break;
 			case "ATTACH BIRCH":
 				this.attach(new BirchBranch());
-				this.showAttached("--");
+				this.showAttached(getBranchPrefix());
+				System.out.println();
 				break;
 			default: 
-				this.showAttached("--");
+				this.showAttached(getBranchPrefix());
 				bool = false;
 				break;
 			}
