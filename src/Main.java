@@ -1,35 +1,12 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
 
-	public static void main(String [ ] args){
+	public static void main(String [ ] args) throws IOException{
 		Branch oakCore = new OakBranch();
-		Branch firstBirchBranch = new BirchBranch();
-		Branch secondBirchBranch = new BirchBranch();
-		Branch thirdOakBranch = new OakBranch();
 		
-		oakCore.attach(firstBirchBranch);
-		oakCore.grow();
-		oakCore.grow();
+		oakCore.growingCore();
 
-		firstBirchBranch.attach(secondBirchBranch);
-		secondBirchBranch.attach(thirdOakBranch);
-		thirdOakBranch.grow();
-		
-		Scanner in = new Scanner(System.in);
-
-		while (true){
-			String haha;
-			haha = in.next();
-			if (haha.equals("end")){
-				break;
-			} else {
-				oakCore.showAttached("--");
-			}
-		}
 	}
-
-
+	
 }
