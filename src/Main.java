@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Main {
 
@@ -14,8 +17,18 @@ public class Main {
 		firstBirchBranch.attach(secondBirchBranch);
 		secondBirchBranch.attach(thirdOakBranch);
 		thirdOakBranch.grow();
+		
+		Scanner in = new Scanner(System.in);
 
-		oakCore.showAttached("");
+		while (true){
+			String haha;
+			haha = in.next();
+			if (haha.equals("end")){
+				break;
+			} else {
+				oakCore.showAttached("--");
+			}
+		}
 	}
 
 
