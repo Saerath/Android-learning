@@ -5,9 +5,12 @@ public class OakBranch extends AbstractBranch {
 		super(branchName);
 	}
 
+	
 	public OakBranch() {
+		
 	}
 
+	
 	public void grow() {
 		for(Branch a:attachedBranches){
 			a.attach(new OakBranch());
