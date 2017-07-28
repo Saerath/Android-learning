@@ -10,7 +10,6 @@ public class OakBranch extends AbstractBranch {
 		attach(new OakBranch());
 	}
 
-	@Override
 	public String getBranchPrefix() {
 		// TODO Auto-generated method stub
 		return branchPrefix;

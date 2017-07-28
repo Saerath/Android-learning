@@ -43,7 +43,7 @@ public abstract class AbstractBranch implements Branch {
 		}
 			for(Branch a : attachedBranches){
 				System.out.println("	" + prefix + " " + a + ": " + getBranchGen() + " gen");
-				a.showAttached(prefix + this.getBranchPrefix());
+				a.showAttached(prefix + this.attachedBranches.get(0).getBranchPrefix());
 			}
 		
 	}
@@ -63,17 +63,17 @@ public abstract class AbstractBranch implements Branch {
 			switch(command.toUpperCase()){
 			case "GROW":
 				this.grow();
-				this.showAttached(getBranchPrefix());
+				this.showAttached(this.attachedBranches.get(0).getBranchPrefix());
 				System.out.println();
 				break;
 			case "ATTACH OAK":
 				this.attach(new OakBranch());
-				this.showAttached(getBranchPrefix());
+				this.showAttached(this.attachedBranches.get(0).getBranchPrefix());
 				System.out.println();
 				break;
 			case "ATTACH BIRCH":
 				this.attach(new BirchBranch());
-				this.showAttached(getBranchPrefix());
+				this.showAttached(this.attachedBranches.get(0).getBranchPrefix());
 				System.out.println();
 				break;
 			default: 
