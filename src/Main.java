@@ -11,6 +11,9 @@ public class Main {
 		oakCore.attach(new BirchBranch("Birch 1"));
 		birchSecond.attach(new OakBranch("Oak 2"));
 		
+		oakCore.getNode();
+		
+		
 		oakCore.showAttached();
 
 	}

@@ -6,5 +6,6 @@ public interface Branch{
 	void showAttached();
 	String getBranchName();
 	void setBranchName(String branchName);
+	int getNode();
 
 }

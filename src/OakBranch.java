@@ -18,4 +18,11 @@ public class OakBranch extends AbstractBranch {
 		attach(new OakBranch());
 	}
 
+
+	@Override
+	public int getNode() {
+		// TODO Auto-generated method stub
+		return this.node;
+	}
+
 }

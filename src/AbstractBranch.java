@@ -1,9 +1,9 @@
 import java.util.*;
 
 public abstract class AbstractBranch implements Branch {
-	
-	private String branchPrefix;
-	private int gen;
+
+	public int node;
+	static int nodeNum = 0;
 
 	private String branchName;
 	
@@ -17,10 +17,13 @@ public abstract class AbstractBranch implements Branch {
 	
 	public AbstractBranch(String branchName) {
 		this.branchName = branchName;
+		this.node = nodeNum;
+		nodeNum++;
 	}
 	
 	public AbstractBranch() {
-
+		this.node = nodeNum;
+		nodeNum++;
 	}
 	
 	ArrayList<Branch> attachedBranches = new ArrayList<>();
@@ -31,13 +34,15 @@ public abstract class AbstractBranch implements Branch {
 	
 	public abstract void grow();
 	
+	public abstract int getNode();
+	
 	public ArrayList<Branch> getBranches(){
 		return attachedBranches;
 	}
 	
 	public void showAttached(){
-		for(int i=0; i<attachedBranches.size();i++){
-			System.out.println(attachedBranches.get(i).getBranchName());
+		for(Branch a : attachedBranches){
+			System.out.println(a + ", " + a.getNode());
 		}
 		
 	}

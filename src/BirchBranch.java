@@ -17,5 +17,12 @@ public class BirchBranch extends AbstractBranch {
 		}
 		attach(new BirchBranch());
 	}
+
+
+	@Override
+	public int getNode() {
+		// TODO Auto-generated method stub
+		return this.node;
+	}
 	
 }
