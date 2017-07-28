@@ -1,18 +1,18 @@
 
 public class OakBranch extends AbstractBranch {
 	
-	String branchPrefix = "++";
+	public OakBranch(String branchName) {
+		super(branchName);
+	}
+
+	public OakBranch() {
+	}
 
 	public void grow() {
 		for(Branch a:attachedBranches){
 			a.attach(new OakBranch());
 		}
 		attach(new OakBranch());
-	}
-
-	public String getBranchPrefix() {
-		// TODO Auto-generated method stub
-		return branchPrefix;
 	}
 
 }
