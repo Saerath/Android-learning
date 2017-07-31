@@ -62,12 +62,10 @@ public abstract class AbstractBranch implements Branch {
 			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"");
 		}
 			for(Branch a : attachedBranches){
-				System.out.println(prefix+a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"");
-				a.showAttached(a.getBranchPrefix());
-			
+				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"");
+				a.showAttached(a.getBranchPrefix()+prefix);	
 			}
-
-		
+	
 		
 	}
 	
