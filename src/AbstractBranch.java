@@ -41,10 +41,30 @@ public abstract class AbstractBranch implements Branch {
 	}
 	
 	public void showAttached(){
+
+			System.out.println("ROOT: " + this + ", " + this.getNode() + ", " + this.getBranchName());
+		
+			for(Branch a : attachedBranches){
+				System.out.println("CHILDREN: " + a + ", " + a.getNode() + ", " + a.getBranchName());
+			
+			}
+			
+			for(Branch a : attachedBranches){
+				a.showAttached();
+			}
+		
+		
+	}
+	
+	public void showAttachedAlternative(){
+		System.out.println(this);
 		for(Branch a : attachedBranches){
-			System.out.println(a + ", " + a.getNode());
+			System.out.println("Children: " + a.getBranchName());
 		}
 		
+		for(Branch a : attachedBranches){
+			a.showAttachedAlternative();
+		}
 	}
 	
 

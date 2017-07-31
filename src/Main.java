@@ -4,18 +4,18 @@ public class Main {
 
 	public static void main(String [ ] args) throws IOException{
 		Branch oakCore = new OakBranch("CORE");
-		Branch birchSecond = new BirchBranch("BIRCH SECOND");
+		Branch birchSecond = new BirchBranch("BIRCH 1");
 		
 		oakCore.attach(birchSecond);
 		oakCore.attach(new OakBranch("Oak 1"));
 		oakCore.attach(new BirchBranch("Birch 1"));
-		birchSecond.attach(new OakBranch("Oak 2"));
-		
-		oakCore.getNode();
-		
+		birchSecond.attach(new OakBranch("Oak 2"));		
 		
 		oakCore.showAttached();
 
+
 	}
+	
+	
 	
 }

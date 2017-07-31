@@ -24,5 +24,7 @@ public class BirchBranch extends AbstractBranch {
 		// TODO Auto-generated method stub
 		return this.node;
 	}
+
+	
 	
 }
