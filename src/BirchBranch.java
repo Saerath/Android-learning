@@ -1,6 +1,8 @@
 
 public class BirchBranch extends AbstractBranch {
 	
+	String branchPrefix = "++";
+	
 	public BirchBranch(String branchName) {
 		super(branchName);
 	}
@@ -23,6 +25,13 @@ public class BirchBranch extends AbstractBranch {
 	public int getNode() {
 		// TODO Auto-generated method stub
 		return this.node;
+	}
+
+
+	@Override
+	public String getBranchPrefix() {
+		// TODO Auto-generated method stub
+		return branchPrefix;
 	}
 
 	
