@@ -14,8 +14,9 @@ public class BirchBranch extends AbstractBranch {
 
 
 	public void grow() {
+
 		for(Branch a:attachedBranches){
-			a.attach(new BirchBranch());
+			a.grow();
 		}
 		attach(new BirchBranch());
 	}

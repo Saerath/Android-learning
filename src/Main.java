@@ -14,9 +14,13 @@ public class Main {
 		birchSecond.attach(birchThird);		
 		birchThird.attach(birchFourth);
 		birchFourth.attach(new OakBranch());
+
+		oakCore.showAttached("");
+		System.out.println();
+		
+		oakCore.grow();
 		
 		oakCore.showAttached("");
-
 
 	}
 	
