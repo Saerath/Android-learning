@@ -70,20 +70,5 @@ public abstract class AbstractBranch implements Branch {
 		
 	}
 	
-	public void showAttachedAlter(String prefix){
-		
-		if(this.getNode()==0){
-			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"");
-		}
-			for(Branch a : attachedBranches){
-				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"");
-			}
-	
-			for(Branch a : attachedBranches){
-				a.showAttached(prefix+a.getBranchPrefix());	
-			}
-		
-	}
-	
 
 }
