@@ -3,7 +3,8 @@ import java.util.*;
 public abstract class AbstractBranch implements Branch {
 
 	public final int node;
-	static int nodeNum = 0;
+	
+	BranchSingleton branchSingleton = BranchSingleton.getInstance();
 	
 	/*
 	 * branchName get/set
@@ -27,13 +28,13 @@ public abstract class AbstractBranch implements Branch {
 	
 	public AbstractBranch(String branchName) {
 		this.branchName = branchName;
-		this.node = nodeNum;
-		nodeNum++;
+		this.node = branchSingleton.getNodeNum();
+		branchSingleton.addNodeNum();
 	}
 	
 	public AbstractBranch() {
-		this.node = nodeNum;
-		nodeNum++;
+		this.node = branchSingleton.getNodeNum();
+		branchSingleton.addNodeNum();
 	}
 	
 	//---------------------------------
