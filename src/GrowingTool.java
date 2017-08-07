@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 
 public class GrowingTool {
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	BranchFactory branchFactory = new BranchFactory();
 	
 	public void draw(Branch branch) throws IOException{
 		Boolean bool = true;
@@ -23,15 +24,13 @@ public class GrowingTool {
 			case "ATTACH BIRCH":
 				System.out.println("BRANCH NAME?");
 				branchName = reader.readLine();
-				branch.attach(new BirchBranch(branchName));
-				branch.showAttached("");
+				branchFactory.create("birch", branch, branchName);
 				break;
 				
 			case "ATTACH OAK":
 				System.out.println("BRANCH NAME?");
 				branchName = reader.readLine();
-				branch.attach(new BirchBranch(branchName));
-				branch.showAttached("");
+				branchFactory.create("oak", branch, branchName);
 				break;
 			
 			default: 
