@@ -1,7 +1,7 @@
 
 public class BranchFactory {
 	public void create(String typeOfBranch, Branch branch, String branchName){
-//		typeOfBranch.toUpperCase();
+
 		switch(typeOfBranch.toUpperCase()){
 		case "BIRCH":
 			branch.attach(new BirchBranch(branchName));
