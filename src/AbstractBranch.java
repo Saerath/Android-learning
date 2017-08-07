@@ -2,7 +2,7 @@ import java.util.*;
 
 public abstract class AbstractBranch implements Branch {
 
-	public int node;
+	public final int node;
 	static int nodeNum = 0;
 	
 	/*
