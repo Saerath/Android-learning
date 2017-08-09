@@ -42,8 +42,18 @@ public class GrowingTool {
 	}
 	
 	public void attachToBranch(Branch branch) throws IOException{
-		String firstBranch = reader.readLine();
-//		String secondBranch = reader.readLine().toUpperCase();
-		branch.getBranchFromMap(firstBranch).showAttached("");
+		System.out.println("Choose branch");
+		String attachebleBranch = reader.readLine();
+		System.out.println("Name for new branch:");
+		String attachingBranch = reader.readLine().toUpperCase();
+		branchFactory.create("birch", branch.getBranchFromMap(attachebleBranch), attachingBranch);
+		branch.showAttached("");
+	}
+	
+	public void growBranch(Branch branch) throws IOException{
+		System.out.println("Choose branch");
+		String attachebleBranch = reader.readLine();
+		branch.getBranchFromMap(attachebleBranch).grow();
+		branch.showAttached("");
 	}
 }
