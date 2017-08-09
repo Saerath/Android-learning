@@ -40,4 +40,10 @@ public class GrowingTool {
 			}
 		}
 	}
+	
+	public void attachToBranch(Branch branch) throws IOException{
+		String firstBranch = reader.readLine();
+//		String secondBranch = reader.readLine().toUpperCase();
+		branch.getBranchFromMap(firstBranch).showAttached("");
+	}
 }

@@ -6,7 +6,13 @@ public class Main {
 		Branch oakCore = new OakBranch("CORE");		
 		GrowingTool growingTool = new GrowingTool();
 		
-		growingTool.draw(oakCore);
+		oakCore.grow();
+		oakCore.grow();
+		oakCore.attach(new BirchBranch("HAHA"));
+		
+		oakCore.showAttached("");
+		
+		growingTool.attachToBranch(oakCore);
 
 	}
 	

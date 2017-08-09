@@ -30,12 +30,14 @@ public abstract class AbstractBranch implements Branch {
 		this.branchName = branchName;
 		this.node = singleton.getNodeNum();
 		singleton.addNodeNum();
+		singleton.addToBranchMap(branchName, this);
 	}
 	
 	public AbstractBranch() {
 		this.node = singleton.getNodeNum();
 		this.branchName = this.getClass().getSimpleName() + " " + this.node; 
 		singleton.addNodeNum();
+		singleton.addToBranchMap(branchName, this);
 	}
 	
 	//---------------------------------
@@ -58,6 +60,10 @@ public abstract class AbstractBranch implements Branch {
 	
 	//---------------------------------
 	
+
+	
+	//---------------------------------
+	
 	public void showAttached(String prefix){
 	
 		if(this.getNode()==0){
@@ -67,8 +73,12 @@ public abstract class AbstractBranch implements Branch {
 				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"" + " NODE: " + a.getNode());
 				a.showAttached(prefix+a.getBranchPrefix());	
 			}
-	
 		
+	}
+	
+	public Branch getBranchFromMap(String branchName){
+		
+		return singleton.getFromBranchMap(branchName);
 	}
 	
 
