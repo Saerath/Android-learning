@@ -42,11 +42,13 @@ public class GrowingTool {
 	}
 	
 	public void attachToBranch(Branch branch) throws IOException{
+		System.out.println("Choose oak/birch branch");
+		String branchType = reader.readLine();
 		System.out.println("Choose branch");
 		String attachebleBranch = reader.readLine();
 		System.out.println("Name for new branch:");
 		String attachingBranch = reader.readLine().toUpperCase();
-		branchFactory.create("birch", branch.getBranchFromMap(attachebleBranch), attachingBranch);
+		branchFactory.create(branchType, branch.getBranchFromMap(attachebleBranch), attachingBranch);
 		branch.showAttached("");
 	}
 	

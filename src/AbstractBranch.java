@@ -12,10 +12,12 @@ public abstract class AbstractBranch implements Branch {
 
 	private String branchName;
 	
+	@Override
 	public String getBranchName() {
 		return branchName;
 	}
 
+	@Override
 	public void setBranchName(String branchName) {
 		this.branchName = branchName;
 	}
@@ -48,6 +50,7 @@ public abstract class AbstractBranch implements Branch {
 		return attachedBranches;
 	}
 	
+	@Override
 	public void attach(Branch branch){
 		attachedBranches.add(branch);
 	}
@@ -63,7 +66,7 @@ public abstract class AbstractBranch implements Branch {
 
 	
 	//---------------------------------
-	
+	@Override
 	public void showAttached(String prefix){
 	
 		if(this.getNode()==0){
@@ -75,7 +78,7 @@ public abstract class AbstractBranch implements Branch {
 			}
 		
 	}
-	
+	@Override
 	public Branch getBranchFromMap(String branchName){
 		
 		return singleton.getFromBranchMap(branchName);

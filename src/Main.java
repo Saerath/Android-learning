@@ -12,8 +12,9 @@ public class Main {
 		
 		oakCore.showAttached("");
 		
-		growingTool.growBranch(oakCore);
-
+		while(true){
+			growingTool.growBranch(oakCore);
+		}
 	}
 	
 	
