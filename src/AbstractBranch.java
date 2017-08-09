@@ -4,7 +4,7 @@ public abstract class AbstractBranch implements Branch {
 
 	public final int node;
 	
-	BranchSingleton branchSingleton = BranchSingleton.getInstance();
+	Singleton singleton = Singleton.getInstance();
 	
 	/*
 	 * branchName get/set
@@ -28,14 +28,14 @@ public abstract class AbstractBranch implements Branch {
 	
 	public AbstractBranch(String branchName) {
 		this.branchName = branchName;
-		this.node = branchSingleton.getNodeNum();
-		branchSingleton.addNodeNum();
+		this.node = singleton.getNodeNum();
+		singleton.addNodeNum();
 	}
 	
 	public AbstractBranch() {
-		this.node = branchSingleton.getNodeNum();
-		this.branchName = "New " + this.getClass().getSimpleName() + " " + this.node; 
-		branchSingleton.addNodeNum();
+		this.node = singleton.getNodeNum();
+		this.branchName = this.getClass().getSimpleName() + " " + this.node; 
+		singleton.addNodeNum();
 	}
 	
 	//---------------------------------
