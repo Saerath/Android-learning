@@ -13,7 +13,8 @@ public class Main {
 		oakCore.showAttached("");
 		
 		while(true){
-			growingTool.attachToBranch(oakCore);
+			growingTool.createBranch();
+			growingTool.attachBranch(oakCore);
 		}
 	}
 	

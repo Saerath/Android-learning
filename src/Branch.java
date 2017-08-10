@@ -10,5 +10,8 @@ public interface Branch{
 	int getNode();
 	Branch getBranchFromMap(String attachebleBranch);
 	
+	boolean isAttached();
+	void setAttached(boolean attached);
+	
 
 }

@@ -4,6 +4,8 @@ public abstract class AbstractBranch implements Branch {
 
 	public final int node;
 	
+	boolean attached;
+	
 	Singleton singleton = Singleton.getInstance();
 	
 	/*
@@ -84,5 +86,14 @@ public abstract class AbstractBranch implements Branch {
 		return singleton.getFromBranchMap(branchName);
 	}
 	
+	@Override
+	public boolean isAttached(){
+		return this.attached;
+	}
+	
+	@Override
+	public void setAttached(boolean attached){
+		this.attached = attached;
+	}
 
 }

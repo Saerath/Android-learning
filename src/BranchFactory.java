@@ -1,19 +1,20 @@
 
 public class BranchFactory {
-	public void create(String typeOfBranch, Branch branch, String branchName){
+	public void create(String typeOfBranch, String branchName){
 
 		switch(typeOfBranch.toUpperCase()){
 		case "BIRCH":
-			branch.attach(new BirchBranch(branchName));
-			branch.showAttached("");
+			new BirchBranch(branchName);
+			System.out.println(branchName + " created");
 			break;
 			
 		case "OAK":
-			branch.attach(new OakBranch(branchName));
-			branch.showAttached("");
+			new OakBranch(branchName);
+			System.out.println(branchName + " created");
 			break;
 			
 		default:
+			System.out.println("Cancel");
 			break;
 		}
 	}
