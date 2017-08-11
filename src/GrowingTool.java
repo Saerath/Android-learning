@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 public class GrowingTool {
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	BranchFactory branchFactory = new BranchFactory();
+	Parser parser = new Parser();
 	
 	public void draw(Branch branch) throws IOException{
 		
@@ -29,29 +30,10 @@ public class GrowingTool {
 	}
 	
 	public void selectBranchToAttach(Branch coreBranch){
-		System.out.println("Select branch to attach");
-		String attachingBranchName;
-		String attachebleBranchName;
-		
-		Branch attachingBranch;
-		Branch attachebleBranch;
 		
 		try {
-			
-			attachingBranchName = reader.readLine();
-			attachingBranch = Singleton.getInstance().getFromBranchMap(attachingBranchName);
-			
-			if(attachingBranch.isAttached()){
-				System.out.println("Selected branch attached already");
-			}else{
-				System.out.println("Select place to attach");
-				
-				attachebleBranchName = reader.readLine();
-				attachebleBranch = Singleton.getInstance().getFromBranchMap(attachebleBranchName);
-				
-				attachebleBranch.attach(attachingBranch);			
-			}
-			
+			String command = reader.readLine();
+			parser.run(command);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

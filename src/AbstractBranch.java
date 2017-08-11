@@ -81,11 +81,7 @@ public abstract class AbstractBranch implements Branch {
 			}
 		
 	}
-	@Override
-	public Branch getBranchFromMap(String branchName){
-		
-		return singleton.getFromBranchMap(branchName);
-	}
+
 	
 	@Override
 	public boolean isAttached(){

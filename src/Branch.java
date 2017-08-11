@@ -8,7 +8,6 @@ public interface Branch{
 	String getBranchPrefix();
 	void setBranchName(String branchName);
 	int getNode();
-	Branch getBranchFromMap(String attachebleBranch);
 	
 	boolean isAttached();
 	void setAttached(boolean attached);

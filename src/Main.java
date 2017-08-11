@@ -16,7 +16,7 @@ public class Main {
 //		}
 		
 		Parser parser = new Parser();
-		parser.run();
+		parser.run("grow core");
 		
 	}
 	
