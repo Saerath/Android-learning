@@ -14,7 +14,7 @@ public class Main {
 		
 		while(true){
 			growingTool.createBranch();
-			growingTool.attachBranch(oakCore);
+			growingTool.selectBranchToAttach(oakCore);
 		}
 	}
 	

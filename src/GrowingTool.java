@@ -22,14 +22,18 @@ public class GrowingTool {
 		branchFactory.create(branchType, attachingBranch);
 	}
 	
-	public void attachBranch(Branch branch) throws IOException{
+	public void selectBranchToAttach(Branch branch) throws IOException{
 		System.out.println("Select branch to attach");
 		String attachingBranch = reader.readLine();
-		System.out.println("Select place to attach");
-		String attachebleBranch = reader.readLine();
-		branch.getBranchFromMap(attachebleBranch).attach(branch.getBranchFromMap(attachingBranch));
-		
-		branch.showAttached("");
+		if(branch.getBranchFromMap(attachingBranch).isAttached()){
+			System.out.println("Selected branch attached already");
+		}else{
+			System.out.println("Select place to attach");
+			String attachebleBranch = reader.readLine();
+			branch.getBranchFromMap(attachebleBranch).attach(branch.getBranchFromMap(attachingBranch));
+			
+			branch.showAttached("");
+		}
 	}
 	
 	public void growBranch(Branch branch) throws IOException{

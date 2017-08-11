@@ -55,6 +55,7 @@ public abstract class AbstractBranch implements Branch {
 	@Override
 	public void attach(Branch branch){
 		attachedBranches.add(branch);
+		branch.setAttached(true);
 	}
 	
 	//---------------------------------
@@ -72,10 +73,10 @@ public abstract class AbstractBranch implements Branch {
 	public void showAttached(String prefix){
 	
 		if(this.getNode()==0){
-			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"");
+			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"" + " Attached?: " + this.isAttached());
 		}
 			for(Branch a : attachedBranches){
-				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"" + " NODE: " + a.getNode());
+				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"" + " Attached?: " + a.isAttached());
 				a.showAttached(prefix+a.getBranchPrefix());	
 			}
 		
