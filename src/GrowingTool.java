@@ -49,15 +49,15 @@ public class GrowingTool {
 				attachebleBranchName = reader.readLine();
 				attachebleBranch = Singleton.getInstance().getFromBranchMap(attachebleBranchName);
 				
-				attachebleBranch.attach(attachingBranch);
-				
-				coreBranch.showAttached("");
+				attachebleBranch.attach(attachingBranch);			
 			}
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		coreBranch.showAttached("");
 		
 	}
 	
