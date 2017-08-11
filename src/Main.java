@@ -1,21 +1,23 @@
-import java.io.IOException;
-
 public class Main {
 
-	public static void main(String [ ] args) throws IOException{
-		Branch oakCore = new OakBranch("CORE");		
-		GrowingTool growingTool = new GrowingTool();
+	public static void main(String [ ] args){
+//		Branch oakCore = new OakBranch("CORE");		
+//		GrowingTool growingTool = new GrowingTool();
+//		
+//		oakCore.grow();
+//		oakCore.grow();
+//		oakCore.attach(new BirchBranch("HAHA"));
+//		
+//		oakCore.showAttached("");
+//		
+//		while(true){
+//			growingTool.createBranch();
+//			growingTool.selectBranchToAttach(oakCore);
+//		}
 		
-		oakCore.grow();
-		oakCore.grow();
-		oakCore.attach(new BirchBranch("HAHA"));
+		Parser parser = new Parser();
+		parser.run();
 		
-		oakCore.showAttached("");
-		
-		while(true){
-			growingTool.createBranch();
-			growingTool.selectBranchToAttach(oakCore);
-		}
 	}
 	
 	
