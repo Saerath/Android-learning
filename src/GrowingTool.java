@@ -18,9 +18,9 @@ public class GrowingTool {
 		try {
 			branchType = reader.readLine();
 			System.out.println("Name for new branch:");
-			String attachingBranch = reader.readLine().toUpperCase();
+			String newBranch = reader.readLine().toUpperCase();
 			
-			branchFactory.create(branchType, attachingBranch);
+			branchFactory.create(branchType, newBranch);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -28,20 +28,32 @@ public class GrowingTool {
 		
 	}
 	
-	public void selectBranchToAttach(Branch branch){
+	public void selectBranchToAttach(Branch coreBranch){
 		System.out.println("Select branch to attach");
-		String attachingBranch;
+		String attachingBranchName;
+		String attachebleBranchName;
+		
+		Branch attachingBranch;
+		Branch attachebleBranch;
+		
 		try {
-			attachingBranch = reader.readLine();
-			if(branch.getBranchFromMap(attachingBranch).isAttached()){
+			
+			attachingBranchName = reader.readLine();
+			attachingBranch = Singleton.getInstance().getFromBranchMap(attachingBranchName);
+			
+			if(attachingBranch.isAttached()){
 				System.out.println("Selected branch attached already");
 			}else{
 				System.out.println("Select place to attach");
-				String attachebleBranch = reader.readLine();
-				branch.getBranchFromMap(attachebleBranch).attach(branch.getBranchFromMap(attachingBranch));
 				
-				branch.showAttached("");
+				attachebleBranchName = reader.readLine();
+				attachebleBranch = Singleton.getInstance().getFromBranchMap(attachebleBranchName);
+				
+				attachebleBranch.attach(attachingBranch);
+				
+				coreBranch.showAttached("");
 			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,16 +61,19 @@ public class GrowingTool {
 		
 	}
 	
-	public void growBranch(Branch branch){
+	public void growBranch(Branch coreBranch){
 		System.out.println("Select branch");
-		String attachebleBranch;
+		String attachebleBranchName;
+		Branch attachebleBranch;
 		try {
-			attachebleBranch = reader.readLine();
-			branch.getBranchFromMap(attachebleBranch).grow();
+			attachebleBranchName = reader.readLine();
+			attachebleBranch = Singleton.getInstance().getFromBranchMap(attachebleBranchName);
+			
+			attachebleBranch.grow();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		branch.showAttached("");
+		coreBranch.showAttached("");
 	}
 }
