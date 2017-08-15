@@ -24,8 +24,8 @@ public class Parser {
 			}
 			
 			Params params = Params.newBuilder().setCommandName(m.group(1)).setBranchNameOne(m.group(2)).setBranchNameTwo(m.group(3)).build();
-			System.out.println(params.getCommandName() + params.getBranchNameOne() + params.getBranchNameTwo());
-					
+			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			
 		}
 	}
 	

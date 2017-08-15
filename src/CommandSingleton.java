@@ -3,15 +3,15 @@ import java.util.Map;
 
 public class CommandSingleton {
 
-	private Map<String, Branch> commandPool = new HashMap<>();
+	private static final String ATTACH_CMD = "ATTACH";
+	
+	
+	private Map<String, Command> commandPool = new HashMap<>();
+	
 	
 	//--------------
 	
-	public void addToBranchMap(String key, Branch branch){
-		commandPool.put(key, branch);
-	}
-	
-	public Branch getFromBranchMap(String key){
+	public Command cmdPool(String key){
 		return commandPool.get(key);
 	}
 	
@@ -21,6 +21,8 @@ public class CommandSingleton {
 	static CommandSingleton commandSingleton = new CommandSingleton();
 	
 	private CommandSingleton() {
+		
+		commandPool.put("ATTACH", new AttachCmdHandler());
 		
 	}
 

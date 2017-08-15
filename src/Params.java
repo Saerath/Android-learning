@@ -34,17 +34,17 @@ public class Params {
 		}
 		
 		public Builder setCommandName(String commandName) {
-			Params.this.commandName = commandName;
+			Params.this.commandName = commandName.toUpperCase();
 			return this;
 		}
 		
 		public Builder setBranchNameOne(String branchNameOne) {
-			Params.this.branchNameOne = branchNameOne;
+			Params.this.branchNameOne = branchNameOne.toUpperCase();
 			return this;
 		}
 		
 		public Builder setBranchNameTwo(String branchNameTwo) {
-			Params.this.branchNameTwo = branchNameTwo;
+			Params.this.branchNameTwo = branchNameTwo.toUpperCase();
 			return this;
 		}
 		
