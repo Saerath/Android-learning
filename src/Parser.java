@@ -8,7 +8,7 @@ public class Parser {
 
 
 
-	public void runGrow(String command){
+	public void runAttach(String command){
 		String regexp = "^(attach)\\s+(\\S+)\\s+to\\s+(\\S+)$";
 //		String regexp = "^(grow)\\s+(\\S+)$";
 		String mainCommand = command;
@@ -22,8 +22,10 @@ public class Parser {
 			for(int i=0; i<m.groupCount()+1; i++){
 				System.out.println(i + ": " + m.group(i).toUpperCase());
 			}
-			Params parserContainer = new Params(m.group(1), m.group(2), m.group(3));
-			System.out.println(parserContainer.getCommandName() + parserContainer.getBranch1() + parserContainer.getBranch2());					
+			
+			Params params = new Params(m.group(1), m.group(2), m.group(3));
+			System.out.println(params.getCommandName() + params.getBranch1() + params.getBranch2());
+					
 		}
 	}
 	

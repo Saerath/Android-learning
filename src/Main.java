@@ -16,7 +16,7 @@ public class Main {
 //		}
 		
 		Parser parser = new Parser();
-		parser.runGrow("attach firstbranch to secondbranch");
+		parser.runAttach("attach firstbranch to secondbranch");
 		
 	}
 	

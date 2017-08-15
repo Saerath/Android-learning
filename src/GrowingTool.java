@@ -33,7 +33,7 @@ public class GrowingTool {
 		
 		try {
 			String command = reader.readLine();
-			parser.runGrow(command);
+			parser.runAttach(command);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
