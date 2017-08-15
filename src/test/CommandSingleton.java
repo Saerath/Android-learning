@@ -1,17 +1,19 @@
+package test;
 import java.util.HashMap;
 import java.util.Map;
+import Commands.*;
 
 public class CommandSingleton {
 
 	private static final String ATTACH_CMD = "ATTACH";
 	
 	
-	private Map<String, Command> commandPool = new HashMap<>();
+	private Map<String, CommandHandler> commandPool = new HashMap<>();
 	
 	
 	//--------------
 	
-	public Command cmdPool(String key){
+	public CommandHandler cmdPool(String key){
 		return commandPool.get(key);
 	}
 	
@@ -22,7 +24,7 @@ public class CommandSingleton {
 	
 	private CommandSingleton() {
 		
-		commandPool.put("ATTACH", new AttachCmdHandler());
+		commandPool.put(ATTACH_CMD, new AttachCmdHandler());
 		
 	}
 

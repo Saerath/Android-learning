@@ -1,4 +1,6 @@
+package test;
 //builder from https://habrahabr.ru/post/244521/
+
 
 public class Params {
 	private String commandName;

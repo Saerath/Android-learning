@@ -1,24 +1,25 @@
+package test;
 
-public class OakBranch extends AbstractBranch {
+public class BirchBranch extends AbstractBranch {
 	
-	String branchPrefix = "--";
+	String branchPrefix = "++";
 	
-	public OakBranch(String branchName) {
+	public BirchBranch(String branchName) {
 		super(branchName);
 	}
 
-	
-	public OakBranch() {
-		
+
+	public BirchBranch() {
+
 	}
 
-	
+
 	public void grow() {
 
 		for(Branch a:attachedBranches){
 			a.grow();
 		}
-		attach(new OakBranch());
+		attach(new BirchBranch());
 	}
 
 
@@ -35,6 +36,6 @@ public class OakBranch extends AbstractBranch {
 		return branchPrefix;
 	}
 
-
-
+	
+	
 }

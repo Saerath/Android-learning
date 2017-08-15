@@ -1,3 +1,4 @@
+package test;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,7 +34,7 @@ public class GrowingTool {
 		
 		try {
 			String command = reader.readLine();
-			parser.runAttach(command);
+			parser.runParser(command);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

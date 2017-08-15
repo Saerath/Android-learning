@@ -1,5 +1,7 @@
+package test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import Commands.*;
 
 public class Parser {
 	
@@ -8,8 +10,8 @@ public class Parser {
 
 
 
-	public void runAttach(String command){
-		String regexp = "^(attach)\\s+(\\S+)\\s+to\\s+(\\S+)$";
+	public void runParser(String command){
+		String regexp = "^(attach|grow)\\s+(\\S+)\\s+to\\s+(\\S+)$";
 //		String regexp = "^(grow)\\s+(\\S+)$";
 		String mainCommand = command;
 		

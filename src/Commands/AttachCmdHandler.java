@@ -1,5 +1,10 @@
+package Commands;
 
-public class AttachCmdHandler implements Command {
+import test.Branch;
+import test.Params;
+import test.Singleton;
+
+public class AttachCmdHandler implements CommandHandler {
 
 	@Override
 	public void run(Params params) {

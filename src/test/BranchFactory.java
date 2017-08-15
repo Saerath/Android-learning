@@ -1,3 +1,4 @@
+package test;
 
 public class BranchFactory {
 	public void create(String typeOfBranch, String branchName){
