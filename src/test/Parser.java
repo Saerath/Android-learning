@@ -2,6 +2,8 @@ package test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import Commands.CommandSingleton;
+
 public class Parser {
 	
 	Pattern p;

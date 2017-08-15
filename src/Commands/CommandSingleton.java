@@ -1,4 +1,4 @@
-package test;
+package Commands;
 import java.util.HashMap;
 import java.util.Map;
 import Commands.*;
