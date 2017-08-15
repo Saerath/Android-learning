@@ -11,7 +11,7 @@ public class Parser {
 
 
 	public void runParser(String command){
-		String regexp = "^(attach|grow)\\s+(\\S+)\\s+to\\s+(\\S+)$";
+		String regexp = "(attach)\\s+(\\S+)\\s+to\\s+(\\S+)";
 //		String regexp = "^(grow)\\s+(\\S+)$";
 		String mainCommand = command;
 		

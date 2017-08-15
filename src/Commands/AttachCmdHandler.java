@@ -9,10 +9,15 @@ public class AttachCmdHandler implements CommandHandler {
 	@Override
 	public void run(Params params) {
 		// TODO Auto-generated method stub
-		Branch firstBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
-		Branch secondBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameTwo());
-		secondBranch.attach(firstBranch);
+		Branch attachingBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
+		Branch staticBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameTwo());
 		
+		if(!attachingBranch.isAttached()){
+			staticBranch.attach(attachingBranch);
+		}else{
+			System.out.println("Selected branch attached already");
+		}
+			
 		Singleton.getInstance().getFromBranchMap("CORE").showAttached("");
 	}
 	

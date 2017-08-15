@@ -6,6 +6,7 @@ import Commands.*;
 public class CommandSingleton {
 
 	private static final String ATTACH_CMD = "ATTACH";
+	private static final String GROW_CMD = "GROW";
 	
 	
 	private Map<String, CommandHandler> commandPool = new HashMap<>();
@@ -25,6 +26,7 @@ public class CommandSingleton {
 	private CommandSingleton() {
 		
 		commandPool.put(ATTACH_CMD, new AttachCmdHandler());
+		commandPool.put(GROW_CMD, new GrowCmdHandler());
 		
 	}
 
