@@ -33,6 +33,9 @@ public class Parser {
 		case 4: //for attach *branch_name_one* to *branch_name_three*
 			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
 			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			break;
+		default:
+			System.out.println("Wrong command " + "\"" + command + "\"");
 		}
 		
 //		String regexp = "(attach)\\s+(\\S+)\\s+to\\s+(\\S+)";

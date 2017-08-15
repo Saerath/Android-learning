@@ -14,7 +14,7 @@ public class Main {
 		Parser parser = new Parser();
 		Branch testBranch = new BirchBranch("TEST");
 		parser.runParser("create oak 3");
-		parser.runParser("attach haha to core");
+		parser.runParser("asd");
 		
 	}
 	
