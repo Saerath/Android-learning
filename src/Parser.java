@@ -23,8 +23,8 @@ public class Parser {
 				System.out.println(i + ": " + m.group(i).toUpperCase());
 			}
 			
-			Params params = new Params(m.group(1), m.group(2), m.group(3));
-			System.out.println(params.getCommandName() + params.getBranch1() + params.getBranch2());
+			Params params = Params.newBuilder().setCommandName(m.group(1)).setBranchNameOne(m.group(2)).setBranchNameTwo(m.group(3)).build();
+			System.out.println(params.getCommandName() + params.getBranchNameOne() + params.getBranchNameTwo());
 					
 		}
 	}

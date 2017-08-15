@@ -1,33 +1,57 @@
+//builder from https://habrahabr.ru/post/244521/
 
 public class Params {
 	private String commandName;
-	private String branchName1;
-	private String branchName2;
+	private String branchNameOne;
+	private String branchNameTwo;
 	
-	public Params(String commandName, String branchName1, String branchName2) {
+	private Params() {
 		// TODO Auto-generated constructor stub
-		this.commandName = commandName;
-		this.branchName1 = branchName1;
-		this.branchName2 = branchName2;
+
 	}
 	
 	public String getCommandName() {
 		return commandName;
 	}
-	public void setCommandName(String commandName) {
-		this.commandName = commandName;
+
+	public String getBranchNameOne() {
+		return branchNameOne;
 	}
-	public String getBranch1() {
-		return branchName1;
+
+	public String getBranchNameTwo() {
+		return branchNameTwo;
 	}
-	public void setBranch1(String branch1) {
-		this.branchName1 = branch1;
+	
+	public static Builder newBuilder(){
+		return new Params().new Builder();
 	}
-	public String getBranch2() {
-		return branchName2;
-	}
-	public void setBranch2(String branch2) {
-		this.branchName2 = branch2;
+
+	
+	public class Builder {
+		
+		private Builder(){
+			
+		}
+		
+		public Builder setCommandName(String commandName) {
+			Params.this.commandName = commandName;
+			return this;
+		}
+		
+		public Builder setBranchNameOne(String branchNameOne) {
+			Params.this.branchNameOne = branchNameOne;
+			return this;
+		}
+		
+		public Builder setBranchNameTwo(String branchNameTwo) {
+			Params.this.branchNameTwo = branchNameTwo;
+			return this;
+		}
+		
+		public Params build(){
+			return Params.this;
+		}
+		
 	}
 
 }
