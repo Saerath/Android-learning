@@ -23,17 +23,34 @@ public class Parser {
 		
 		switch(exp.length){
 		case 2: //for grow branch or create branch
-			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();
-			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			try{
+				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();
+				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);	
+			}catch (NullPointerException e){
+				e.getMessage();
+			}
 			break;
+			
 		case 3: //for create *branch_type* *branch_name*
-			params = Params.newBuilder().setCommandName(exp[0]).setBranchType(exp[1]).setBranchNameOne(exp[2]).build();
-			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			try {
+				params = Params.newBuilder().setCommandName(exp[0]).setBranchType(exp[1]).setBranchNameOne(exp[2]).build();
+				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
+			
 		case 4: //for attach *branch_name_one* to *branch_name_three*
-			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
-			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			try {
+				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
+				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
+			
 		default:
 			System.out.println("Wrong command " + "\"" + command + "\"");
 		}

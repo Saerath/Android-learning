@@ -10,53 +10,15 @@ public class GrowingTool {
 	
 	public void draw(Branch branch) throws IOException{
 		
-			
+		branch.showAttached("");
 		
-	}
-	
-	public void createBranch(){
-		System.out.println("Choose oak/birch branch");
-		String branchType;
-		try {
-			branchType = reader.readLine();
-			System.out.println("Name for new branch:");
-			String newBranch = reader.readLine().toUpperCase();
-			
-			branchFactory.create(branchType, newBranch);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		System.out.print("Command: ");
+		
+		while(true){
+			String cmd = reader.readLine();
+			parser.runParser(cmd);	
 		}
 		
 	}
 	
-	public void selectBranchToAttach(Branch coreBranch){
-		
-		try {
-			String command = reader.readLine();
-			parser.runParser(command);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		coreBranch.showAttached("");
-		
-	}
-	
-	public void growBranch(Branch coreBranch){
-		System.out.println("Select branch");
-		String attachebleBranchName;
-		Branch attachebleBranch;
-		try {
-			attachebleBranchName = reader.readLine();
-			attachebleBranch = Singleton.getInstance().getFromBranchMap(attachebleBranchName);
-			
-			attachebleBranch.grow();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		coreBranch.showAttached("");
-	}
 }
