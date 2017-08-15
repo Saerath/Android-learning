@@ -16,7 +16,6 @@ public class GrowCmdHandler implements CommandHandler {
 		System.out.println("\"Grow " + growingBranch.getBranchName() + " command.\"");
 		growingBranch.grow();
 		
-		Singleton.getInstance().getFromBranchMap("CORE").showAttached("");
 		
 	}
 	

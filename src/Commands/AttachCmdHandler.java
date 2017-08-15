@@ -11,16 +11,16 @@ public class AttachCmdHandler implements CommandHandler {
 		// TODO Auto-generated method stub
 		System.out.println("\"Attach\" command.");
 		
-		Branch selectedBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
-		Branch staticBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameTwo());
+		Branch attachmentBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
+		Branch body = Singleton.getInstance().getFromBranchMap(params.getBranchNameTwo());
 		
-		if(!selectedBranch.isAttached()){
-			staticBranch.attach(selectedBranch);
+		if(!attachmentBranch.isAttached()){
+			body.attach(attachmentBranch);
 		}else{
-			System.out.println("Selected branch \"" + selectedBranch.getBranchName() + "\" attached already");
+			System.out.println("Selected branch \"" + attachmentBranch.getBranchName() + "\" attached already");
 		}
 			
-		Singleton.getInstance().getFromBranchMap("CORE").showAttached("");
+
 	}
 	
 
