@@ -5,7 +5,7 @@ public class Params {
 	private String branchNameOne;
 	private String branchNameTwo;
 	
-	private Params() {
+	public Params() {
 		// TODO Auto-generated constructor stub
 
 	}
