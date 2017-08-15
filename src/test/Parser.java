@@ -26,10 +26,13 @@ public class Parser {
 			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();
 			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 			break;
-		case 3: //for attach smth to smth
-			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
+		case 3: //for create *branch_type* *branch_name*
+			params = Params.newBuilder().setCommandName(exp[0]).setBranchType(exp[1]).setBranchNameOne(exp[2]).build();
 			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 			break;
+		case 4: //for attach *branch_name_one* to *branch_name_three*
+			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
+			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 		}
 		
 //		String regexp = "(attach)\\s+(\\S+)\\s+to\\s+(\\S+)";

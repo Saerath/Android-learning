@@ -6,6 +6,7 @@ public class Params {
 	private String commandName;
 	private String branchNameOne;
 	private String branchNameTwo;
+	private String branchType;
 	
 	public Params() {
 		// TODO Auto-generated constructor stub
@@ -24,11 +25,15 @@ public class Params {
 		return branchNameTwo;
 	}
 	
+	public String getBranchType() {
+		return branchType;
+	}
+	
 	public static Builder newBuilder(){
 		return new Params().new Builder();
 	}
 
-	
+
 	public class Builder {
 		
 		private Builder(){
@@ -47,6 +52,11 @@ public class Params {
 		
 		public Builder setBranchNameTwo(String branchNameTwo) {
 			Params.this.branchNameTwo = branchNameTwo.toUpperCase();
+			return this;
+		}
+		
+		public Builder setBranchType(String branchType) {
+			Params.this.branchType = branchType;
 			return this;
 		}
 		
