@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,13 +5,12 @@ public class Parser {
 	
 	Pattern p;
 	Matcher m;
-	
-	Map<String, String> opPool = new HashMap<>();
 
 
-	public void run(String command){
-//		String regexp = "^(attach)\\s+(\\S+)\\s+to\\s+(\\S+)$|^(grow)\\s+(\\S+)$";
-		String regexp = "^(grow)\\s+(\\S+)$";
+
+	public void runGrow(String command){
+		String regexp = "^(attach)\\s+(\\S+)\\s+to\\s+(\\S+)$";
+//		String regexp = "^(grow)\\s+(\\S+)$";
 		String mainCommand = command;
 		
 		p = Pattern.compile(regexp);
@@ -25,7 +22,8 @@ public class Parser {
 			for(int i=0; i<m.groupCount()+1; i++){
 				System.out.println(i + ": " + m.group(i).toUpperCase());
 			}
-					
+			Params parserContainer = new Params(m.group(1), m.group(2), m.group(3));
+			System.out.println(parserContainer.getCommandName() + parserContainer.getBranch1() + parserContainer.getBranch2());					
 		}
 	}
 	
