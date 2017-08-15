@@ -13,7 +13,7 @@ public class Main {
 			
 		Parser parser = new Parser();
 		Branch testBranch = new BirchBranch("TEST");
-		parser.runParser("attach haha to core");
+		parser.runParser("grow core");
 		
 	}
 	
