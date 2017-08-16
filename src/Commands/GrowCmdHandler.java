@@ -10,11 +10,14 @@ public class GrowCmdHandler implements CommandHandler {
 	public void run(Params params) {
 		// TODO Auto-generated method stub
 
-		
-		Branch growingBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
-		
-		System.out.println("\"Grow " + growingBranch.getBranchName() + " command.\"");
-		growingBranch.grow();
+		if(params.getBranchNameOne() == null){
+			System.out.println("Something is null.");
+		}else{
+			Branch growingBranch = Singleton.getInstance().getFromBranchMap(params.getBranchNameOne());
+			
+			System.out.println("\"Grow " + growingBranch.getBranchName() + " command.\"");
+			growingBranch.grow();
+		}
 		
 		
 	}

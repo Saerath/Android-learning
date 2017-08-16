@@ -30,7 +30,7 @@ public class GrowingTool {
 	}
 	
 	void execCmd(Params params){
-		CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+		CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);		
 	}
 	
 }
