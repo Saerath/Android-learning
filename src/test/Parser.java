@@ -2,6 +2,7 @@ package test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import Commands.CommandHandler;
 import Commands.CommandSingleton;
 
 public class Parser {
@@ -25,7 +26,7 @@ public class Parser {
 		case 2: //for grow branch or create branch
 			try{
 				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();
-				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);	
+				execCmd(params);	
 			}catch (NullPointerException e){
 				e.getMessage();
 			}
@@ -34,7 +35,7 @@ public class Parser {
 		case 3: //for create *branch_type* *branch_name*
 			try {
 				params = Params.newBuilder().setCommandName(exp[0]).setBranchType(exp[1]).setBranchNameOne(exp[2]).build();
-				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+				execCmd(params);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -44,7 +45,7 @@ public class Parser {
 		case 4: //for attach *branch_name_one* to *branch_name_three*
 			try {
 				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).setBranchNameTwo(exp[3]).build();
-				CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
+				execCmd(params);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -55,24 +56,11 @@ public class Parser {
 			System.out.println("Wrong command " + "\"" + command + "\"");
 		}
 		
-//		String regexp = "(attach)\\s+(\\S+)\\s+to\\s+(\\S+)";
-//		String regexp = "^(grow)\\s+(\\S+)$";
-//		String mainCommand = command;
-//		
-//		p = Pattern.compile(regexp);
-//		m = p.matcher(mainCommand);
-//		
-//		System.out.println(mainCommand);
-//		
-//		while(m.find()){
-//			for(int i=0; i<m.groupCount()+1; i++){
-//				System.out.println(i + ": " + m.group(i).toUpperCase());
-//			}
-//			
-//			Params params = Params.newBuilder().setCommandName(m.group(1)).setBranchNameOne(m.group(2)).setBranchNameTwo(m.group(3)).build();
-//			CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
-//			
-//		}
+
+	}
+	
+	void execCmd(Params params){
+		CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 	}
 	
 	
