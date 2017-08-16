@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import Commands.CommandSingleton;
+
 public class GrowingTool {
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	BranchFactory branchFactory = new BranchFactory();
@@ -16,9 +18,18 @@ public class GrowingTool {
 		
 		while(true){
 			String cmd = reader.readLine();
-			parser.runParser(cmd);	
+			execCmd(cmd);	
 		}
 		
+	}
+	
+	public Params getParams(String cmd){	
+		return parser.runParser(cmd);
+	}
+	
+	void execCmd(String cmd){
+		Params params = getParams(cmd);
+		CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 	}
 	
 }
