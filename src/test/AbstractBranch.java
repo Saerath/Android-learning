@@ -7,13 +7,24 @@ public abstract class AbstractBranch implements Branch {
 	
 	boolean attached;
 	
+	private String branchName;
+	
 	Singleton singleton = Singleton.getInstance();
+	
+	ArrayList<Branch> attachedBranches = new ArrayList<>();
+	
+	//---------------------------------
+	
+	public abstract void grow();
+	public abstract int getNode();
+	public abstract String getBranchPrefix();
+	
+	//---------------------------------
 	
 	/*
 	 * branchName get/set
 	 */
 
-	private String branchName;
 	
 	@Override
 	public String getBranchName() {
@@ -47,7 +58,6 @@ public abstract class AbstractBranch implements Branch {
 	
 	//---------------------------------
 	
-	ArrayList<Branch> attachedBranches = new ArrayList<>();
 	
 	public ArrayList<Branch> getBranches(){
 		return attachedBranches;
@@ -59,15 +69,6 @@ public abstract class AbstractBranch implements Branch {
 		branch.setAttached(true);
 	}
 	
-	//---------------------------------
-	
-	public abstract void grow();
-	public abstract int getNode();
-	public abstract String getBranchPrefix();
-	
-	//---------------------------------
-	
-
 	
 	//---------------------------------
 	@Override
