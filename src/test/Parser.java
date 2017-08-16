@@ -21,10 +21,12 @@ public class Parser {
 		}
 		
 		switch(exp.length){
+		case 1: //for show tree
+			params = Params.newBuilder().setCommandName(exp[0]).build();
+			break;
+			
 		case 2: //for grow branch or create branch
-
-				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();	
-
+			params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();	
 			break;
 			
 		case 3: //for create *branch_type* *branch_name*

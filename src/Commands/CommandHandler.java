@@ -1,5 +1,5 @@
 package Commands;
-import test.*;;
+import test.*;
 
 public interface CommandHandler {
 	void run(Params params);
