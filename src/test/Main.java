@@ -10,10 +10,7 @@ public class Main {
 		
 		growingTool.draw(oakCore);
 			
-//		Parser parser = new Parser();
-//		Branch testBranch = new BirchBranch("TEST");
-//		parser.runParser("create oak 3");
-//		parser.runParser("asd");
+
 		
 	}
 	

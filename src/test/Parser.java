@@ -22,11 +22,9 @@ public class Parser {
 		
 		switch(exp.length){
 		case 2: //for grow branch or create branch
-			try{
+
 				params = Params.newBuilder().setCommandName(exp[0]).setBranchNameOne(exp[1]).build();	
-			}catch (NullPointerException e){
-				e.getMessage();
-			}
+
 			break;
 			
 		case 3: //for create *branch_type* *branch_name*

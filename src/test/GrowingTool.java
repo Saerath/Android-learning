@@ -11,6 +11,7 @@ public class GrowingTool {
 	Parser parser = new Parser();
 	
 	public void draw(Branch branch) throws IOException{
+		Params params;
 		
 		branch.showAttached("");
 		
@@ -18,7 +19,8 @@ public class GrowingTool {
 		
 		while(true){
 			String cmd = reader.readLine();
-			execCmd(cmd);	
+			params = getParams(cmd);
+			execCmd(params);	
 		}
 		
 	}
@@ -27,8 +29,7 @@ public class GrowingTool {
 		return parser.runParser(cmd);
 	}
 	
-	void execCmd(String cmd){
-		Params params = getParams(cmd);
+	void execCmd(Params params){
 		CommandSingleton.getInstance().cmdPool(params.getCommandName()).run(params);
 	}
 	
