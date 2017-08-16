@@ -71,16 +71,27 @@ public abstract class AbstractBranch implements Branch {
 	
 	
 	//---------------------------------
+//	@Override
+//	public void showAttached(String prefix){
+//	
+//		if(this.getNode()==0){
+//			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"" + " Attached?: " + this.isAttached());
+//		}
+//			for(Branch a : attachedBranches){
+//				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"" + " Attached?: " + a.isAttached());
+//				a.showAttached(prefix+a.getBranchPrefix());	
+//			}
+//		
+//	}
+	
 	@Override
 	public void showAttached(String prefix){
+		
+		System.out.println(prefix + " " + this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"" + " Attached?: " + this.isAttached());
 	
-		if(this.getNode()==0){
-			System.out.println(this.getBranchName() + " \"" + this.getClass().getSimpleName() + "\"" + " Attached?: " + this.isAttached());
+		for(Branch a:attachedBranches){
+			a.showAttached(prefix + a.getBranchPrefix());
 		}
-			for(Branch a : attachedBranches){
-				System.out.println(prefix + a.getBranchPrefix() + " " + a.getBranchName() + " \"" + a.getClass().getSimpleName() + "\"" + " Attached?: " + a.isAttached());
-				a.showAttached(prefix+a.getBranchPrefix());	
-			}
 		
 	}
 
