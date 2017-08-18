@@ -41,17 +41,17 @@ public class Params {
 		}
 		
 		public Builder setCommandName(String commandName) {
-			Params.this.commandName = commandName.toUpperCase();
+			Params.this.commandName = commandName;
 			return this;
 		}
 		
 		public Builder setBranchNameOne(String branchNameOne) {
-			Params.this.branchNameOne = branchNameOne.toUpperCase();
+			Params.this.branchNameOne = branchNameOne;
 			return this;
 		}
 		
 		public Builder setBranchNameTwo(String branchNameTwo) {
-			Params.this.branchNameTwo = branchNameTwo.toUpperCase();
+			Params.this.branchNameTwo = branchNameTwo;
 			return this;
 		}
 		

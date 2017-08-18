@@ -16,10 +16,6 @@ public class Parser {
 		
 		String[] exp = command.split("\\s+");
 		
-		for(String e : exp){
-			e.toUpperCase();
-		}
-		
 		switch(exp.length){
 		case 1: //for show tree
 			params = Params.newBuilder().setCommandName(exp[0]).build();

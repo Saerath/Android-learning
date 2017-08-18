@@ -51,7 +51,7 @@ public abstract class AbstractBranch implements Branch {
 	
 	public AbstractBranch() {
 		this.node = singleton.getNodeNum();
-		this.branchName = this.getClass().getSimpleName() + " " + this.node; 
+		this.branchName = this.getClass().getSimpleName() + "_" + this.node; 
 		singleton.addNodeNum();
 		singleton.addToBranchMap(branchName, this);
 	}

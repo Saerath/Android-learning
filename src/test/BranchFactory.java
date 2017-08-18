@@ -3,7 +3,7 @@ package test;
 public class BranchFactory {
 	public void create(String typeOfBranch, String branchName){
 
-		switch(typeOfBranch.toUpperCase()){
+		switch(typeOfBranch){
 		case "BIRCH":
 			new BirchBranch(branchName);
 			System.out.println(branchName + " created");
@@ -15,7 +15,7 @@ public class BranchFactory {
 			break;
 			
 		default:
-			System.out.println("Cancel");
+			System.out.println("Can't create branch.");
 			break;
 		}
 	}
