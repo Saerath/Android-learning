@@ -9,7 +9,7 @@ public class Main {
 		Branch birchCore = new BirchBranch("CORE2");
 		oakCore.grow();
 		oakCore.grow();
-		oakCore.showAttached("");
+//		oakCore.showAttached("");
 		
 		GrowingTool growingTool = new GrowingTool();
 		
